@@ -4,988 +4,477 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Loksaieta | DevOps & Cloud Solutions</title>
-
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
+<title>NEON ARCADE | Play Beyond Limits</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* {box-sizing:border-box;margin:0;padding:0}
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #f5f7fb;
-    color: #172033;
-    transition: 0.3s;
+    font-family:Poppins,sans-serif;
+    background:#090817;
+    color:white;
+    overflow-x:hidden;
 }
 
-html {
-    scroll-behavior: smooth;
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 8%;
+    background:#100e25;
+    border-bottom:1px solid #30264e;
+    position:sticky;
+    top:0;
+    z-index:10;
 }
 
-/* NAVBAR */
-
-.navbar {
-    background: #101a35;
-    padding: 18px 7%;
+.logo {
+    font-family:Orbitron;
+    font-size:24px;
+    font-weight:800;
+    color:#00f5ff;
+    text-shadow:0 0 15px #00f5ff;
 }
 
-.navbar-brand {
-    color: white !important;
-    font-size: 25px;
-    font-weight: 800;
+nav a {
+    color:#ddd;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:13px;
 }
 
-.nav-link {
-    color: #dce4f5 !important;
-    margin-left: 15px;
-    font-size: 14px;
-}
-
-.nav-link:hover {
-    color: #38bdf8 !important;
-}
-
-/* HERO */
+nav a:hover {color:#00f5ff}
 
 .hero {
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    padding: 80px 8%;
-    background: linear-gradient(120deg,#101a35,#172c55,#075985);
-    color: white;
+    min-height:540px;
+    padding:100px 8%;
+    text-align:center;
+    background:
+    radial-gradient(ellipse at center,#38206c 0%,#15102d 45%,#090817 80%);
 }
 
 .hero h1 {
-    font-size: 52px;
-    font-weight: 800;
-    line-height: 1.3;
+    font-family:Orbitron;
+    font-size:clamp(35px,6vw,68px);
+    color:#fff;
+    text-shadow:0 0 20px #b000ff;
 }
 
-.hero h1 span {
-    color: #38bdf8;
-}
+.hero h1 span {color:#00f5ff}
 
 .hero p {
-    color: #cbd5e1;
-    margin: 25px 0;
-    font-size: 17px;
-    line-height: 1.8;
+    color:#c4badb;
+    margin:25px auto;
+    max-width:600px;
+    line-height:1.8;
 }
 
-.hero img {
-    width: 100%;
-    max-width: 430px;
-    animation: float 4s ease-in-out infinite;
+.btn {
+    display:inline-block;
+    background:linear-gradient(90deg,#a000ff,#00d9ff);
+    padding:14px 32px;
+    color:white;
+    border:none;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
 }
 
-@keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-18px); }
+.btn:hover {
+    transform:scale(1.08);
+    box-shadow:0 0 25px #a000ff;
 }
-
-.btn-main {
-    background: #0ea5e9;
-    color: white;
-    border-radius: 30px;
-    padding: 13px 30px;
-    border: none;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.btn-main:hover {
-    background: #0284c7;
-    color: white;
-}
-
-/* GENERAL SECTION */
 
 .section {
-    padding: 85px 8%;
+    padding:75px 8%;
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
+.heading {
+    text-align:center;
+    font-family:Orbitron;
+    font-size:28px;
+    margin-bottom:40px;
+    color:#00f5ff;
 }
 
-.section-title h2 {
-    font-size: 35px;
-    font-weight: 700;
+.cards {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
 }
 
-.section-title p {
-    color: #64748b;
+.card {
+    background:linear-gradient(145deg,#1b1738,#100e25);
+    border:1px solid #42316c;
+    border-radius:18px;
+    padding:30px 20px;
+    text-align:center;
+    transition:.3s;
 }
 
-/* ABOUT */
-
-.about-box {
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+.card:hover {
+    transform:translateY(-10px);
+    border-color:#00f5ff;
+    box-shadow:0 0 25px #351b70;
 }
 
-.about-box i {
-    font-size: 40px;
-    color: #0284c7;
-    margin-bottom: 20px;
+.game-icon {font-size:55px;margin-bottom:18px}
+
+.card h3 {margin-bottom:12px}
+
+.card p {
+    color:#aaa;
+    font-size:13px;
+    line-height:1.7;
+    margin-bottom:20px;
 }
 
-/* SERVICE CARDS */
-
-.service-card {
-    background: white;
-    padding: 35px 25px;
-    border-radius: 15px;
-    text-align: center;
-    height: 100%;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
-    transition: 0.3s;
+.game-btn {
+    padding:10px 22px;
+    background:#291c50;
+    border:1px solid #a000ff;
+    border-radius:20px;
+    color:white;
+    cursor:pointer;
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+.game-btn:hover {background:#a000ff}
+
+.score-section {
+    text-align:center;
+    background:#14102b;
+    border-top:1px solid #34245c;
+    border-bottom:1px solid #34245c;
 }
 
-.service-card i {
-    font-size: 45px;
-    color: #0284c7;
-    margin-bottom: 20px;
+.score {
+    font-family:Orbitron;
+    font-size:48px;
+    color:#00f5ff;
+    margin:20px;
+    text-shadow:0 0 15px #00f5ff;
 }
 
-.service-card h4 {
-    font-weight: 700;
-    margin-bottom: 15px;
+.game-box {
+    background:#17132f;
+    border:1px solid #57348d;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    max-width:650px;
+    margin:auto;
 }
 
-.service-card p {
-    color: #64748b;
-    font-size: 14px;
+#target {
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:#00f5ff;
+    box-shadow:0 0 25px #00f5ff;
+    border:none;
+    cursor:pointer;
+    margin:25px;
+    display:none;
 }
 
-/* TECHNOLOGY */
+#target:hover {transform:scale(1.1)}
 
-.tech-section {
-    background: #101a35;
-    color: white;
+#message {
+    color:#d6c5ff;
+    margin:15px;
 }
 
-.tech-card {
-    text-align: center;
-    padding: 30px 15px;
-    background: #1e2b49;
-    border-radius: 15px;
-    height: 100%;
-    transition: 0.3s;
+.features {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    text-align:center;
 }
 
-.tech-card:hover {
-    background: #075985;
-    transform: scale(1.05);
+.feature {
+    background:#17132f;
+    padding:25px;
+    border-radius:15px;
 }
 
-.tech-card i {
-    font-size: 42px;
-    margin-bottom: 15px;
-    color: #38bdf8;
-}
-
-/* PIPELINE */
-
-.pipeline {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.pipeline-step {
-    background: white;
-    padding: 25px 20px;
-    width: 145px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-}
-
-.pipeline-step i {
-    font-size: 30px;
-    color: #0284c7;
-    margin-bottom: 12px;
-}
-
-.pipeline-arrow {
-    font-size: 25px;
-    color: #0284c7;
-}
-
-/* STATS */
-
-.stats {
-    background: linear-gradient(120deg,#075985,#101a35);
-    color: white;
-    padding: 65px 8%;
-}
-
-.stat-box {
-    text-align: center;
-    padding: 20px;
-}
-
-.stat-box h2 {
-    font-size: 42px;
-    color: #38bdf8;
-    font-weight: 800;
-}
-
-/* TEAM */
-
-.team-card {
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    height: 100%;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-.team-card img {
-    width: 115px;
-    height: 115px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-}
-
-/* NEWS */
-
-.news-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    height: 100%;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-.news-card img {
-    width: 100%;
-    height: 210px;
-    object-fit: cover;
-}
-
-.news-content {
-    padding: 25px;
-}
-
-/* CONTACT */
-
-.contact-section {
-    background: #101a35;
-    color: white;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-}
-
-.contact-form textarea {
-    height: 130px;
-}
-
-/* FOOTER */
+.feature span {font-size:35px}
 
 footer {
-    background: #080f20;
-    color: #cbd5e1;
-    padding: 40px 8%;
-    text-align: center;
+    text-align:center;
+    background:#100e25;
+    padding:35px;
+    color:#aaa;
+    border-top:1px solid #30264e;
 }
 
-footer a {
-    color: #38bdf8;
-    margin: 10px;
-    text-decoration: none;
+#clock {color:#00f5ff;font-family:Orbitron}
+
+@media(max-width:650px) {
+    header {flex-direction:column;gap:15px}
+    nav a {margin:0 7px;font-size:11px}
+    .hero {padding:75px 6%}
 }
-
-/* DARK MODE */
-
-body.dark {
-    background: #0f172a;
-    color: white;
-}
-
-body.dark .section-title p {
-    color: #cbd5e1;
-}
-
-body.dark .about-box,
-body.dark .service-card,
-body.dark .team-card,
-body.dark .news-card,
-body.dark .pipeline-step {
-    background: #1e293b;
-    color: white;
-}
-
-body.dark .service-card p,
-body.dark .news-card p {
-    color: #cbd5e1;
-}
-
-body.dark .news-card h5 {
-    color: white;
-}
-
-body.dark .bg-light {
-    background: #0f172a !important;
-}
-
-@media(max-width:768px) {
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero {
-        text-align: center;
-    }
-
-    .hero img {
-        margin-top: 40px;
-    }
-
-    .pipeline-arrow {
-        display: none;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-
-<a class="navbar-brand" href="#home">
-<i class="fa-solid fa-cloud"></i> LOKSAIETA
-</a>
-
-<button class="navbar-toggler" type="button"
-data-bs-toggle="collapse" data-bs-target="#menu">
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="menu">
-
-<ul class="navbar-nav ms-auto">
-
-<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-<li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-<li class="nav-item"><a class="nav-link" href="#technology">Technology</a></li>
-<li class="nav-item"><a class="nav-link" href="#pipeline">Pipeline</a></li>
-<li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-
-</ul>
-
-<button class="btn btn-outline-info ms-lg-3 mt-2 mt-lg-0"
-onclick="toggleTheme()">
-<i class="fa-solid fa-moon"></i>
-</button>
-
-</div>
-</nav>
-
-
-<!-- HERO SECTION -->
+<header>
+    <div class="logo">⚡ NEON ARCADE</div>
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#games">GAMES</a>
+        <a href="#play">PLAY</a>
+        <a href="#about">ABOUT</a>
+    </nav>
+</header>
 
 <section class="hero" id="home">
 
-<div class="row align-items-center w-100">
+    <h1>ENTER THE <span>FUTURE</span></h1>
 
-<div class="col-lg-6">
+    <p>
+        Welcome to Neon Arcade!
+        Discover exciting mini games, challenge your reflexes,
+        break records and become the ultimate arcade champion.
+    </p>
 
-<h1>
-Building the Future with
-<span>Cloud & DevOps</span>
-</h1>
+    <a href="#games" class="btn">EXPLORE GAMES 🚀</a>
 
-<p>
-Welcome to Loksaieta Technologies.
-We deliver modern cloud infrastructure,
-automation, software development and
-next-generation DevOps solutions.
-</p>
+    <p id="clock"></p>
 
-<a href="#services" class="btn-main">
-Explore Services <i class="fa-solid fa-arrow-right"></i>
-</a>
-
-<a href="#about" class="btn btn-outline-light rounded-pill ms-2 p-3">
-Learn More
-</a>
-
-</div>
-
-<div class="col-lg-6 text-center">
-
-<img src="https://illustrations.popsy.co/blue/remote-work.svg"
-alt="Cloud technology illustration">
-
-</div>
-
-</div>
 </section>
 
+<section class="section" id="games">
 
-<!-- ABOUT SECTION -->
+    <h2 class="heading">🎮 GAME ZONE</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="game-icon">⚡</div>
+            <h3>Speed Clicker</h3>
+            <p>Test your reflexes. Click as fast as you can in 10 seconds!</p>
+            <button class="game-btn" onclick="startGame()">PLAY NOW</button>
+        </div>
+
+        <div class="card">
+            <div class="game-icon">🧠</div>
+            <h3>Brain Challenge</h3>
+            <p>Think quickly and solve a random mathematical puzzle.</p>
+            <button class="game-btn" onclick="mathGame()">PLAY NOW</button>
+        </div>
+
+        <div class="card">
+            <div class="game-icon">🎲</div>
+            <h3>Lucky Dice</h3>
+            <p>Roll the dice and see what number destiny gives you.</p>
+            <button class="game-btn" onclick="rollDice()">ROLL DICE</button>
+        </div>
+
+        <div class="card">
+            <div class="game-icon">🌌</div>
+            <h3>Space Explorer</h3>
+            <p>Discover the universe and explore the mysteries of space.</p>
+            <button class="game-btn" onclick="spaceGame()">EXPLORE</button>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section score-section" id="play">
+
+    <h2 class="heading">⚡ SPEED CLICK CHALLENGE</h2>
+
+    <div class="game-box">
+
+        <h3>How fast are your fingers?</h3>
+
+        <p id="message">Press START and click the glowing circle!</p>
+
+        <div class="score" id="score">0</div>
+
+        <p>TIME LEFT: <span id="time">10</span> seconds</p>
+
+        <button class="btn" id="startBtn" onclick="startGame()">
+            START GAME
+        </button>
+
+        <br>
+
+        <button id="target" onclick="hitTarget()"></button>
+
+    </div>
+
+</section>
 
 <section class="section" id="about">
 
-<div class="section-title">
-<h2>Who We Are</h2>
-<p>Innovation, technology and digital transformation.</p>
-</div>
+    <h2 class="heading">✨ ARCADE FEATURES</h2>
 
-<div class="row g-4">
+    <div class="features">
 
-<div class="col-lg-6">
+        <div class="feature">
+            <span>🚀</span>
+            <h3>Fast Gaming</h3>
+            <p>Quick and exciting challenges.</p>
+        </div>
 
-<div class="about-box h-100">
+        <div class="feature">
+            <span>🏆</span>
+            <h3>High Scores</h3>
+            <p>Beat your previous records.</p>
+        </div>
 
-<i class="fa-solid fa-building"></i>
+        <div class="feature">
+            <span>🌈</span>
+            <h3>Neon World</h3>
+            <p>Explore futuristic visuals.</p>
+        </div>
 
-<h3>About Loksaieta</h3>
+        <div class="feature">
+            <span>🎯</span>
+            <h3>Skill Building</h3>
+            <p>Challenge your mind and reflexes.</p>
+        </div>
 
-<p>
-Loksaieta is a technology-focused organization
-committed to delivering innovative digital solutions.
-Our focus is on cloud computing, software engineering,
-automation and modern IT infrastructure.
-</p>
-
-<p>
-We believe in building scalable, secure and reliable
-applications that help businesses grow in the digital era.
-</p>
-
-</div>
-</div>
-
-<div class="col-lg-6">
-
-<div class="about-box h-100">
-
-<i class="fa-solid fa-bullseye"></i>
-
-<h3>Our Mission</h3>
-
-<p>
-Our mission is to simplify technology through
-automation, continuous integration, continuous delivery
-and cloud-native engineering.
-</p>
-
-<p>
-We aim to create a future where software development
-and deployment become faster, smarter and more reliable.
-</p>
-
-</div>
-</div>
-
-</div>
-</section>
-
-
-<!-- SERVICES -->
-
-<section class="section bg-light" id="services">
-
-<div class="section-title">
-<h2>Our Services</h2>
-<p>Explore our technology solutions.</p>
-</div>
-
-<div class="row g-4">
-
-<div class="col-md-4">
-<div class="service-card">
-<i class="fa-solid fa-cloud"></i>
-<h4>Cloud Computing</h4>
-<p>Scalable infrastructure and cloud solutions using AWS, Azure and modern cloud platforms.</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="service-card">
-<i class="fa-solid fa-code-branch"></i>
-<h4>DevOps Automation</h4>
-<p>Automated software development workflows, CI/CD pipelines and deployment strategies.</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="service-card">
-<i class="fa-brands fa-docker"></i>
-<h4>Containerization</h4>
-<p>Application packaging, Docker containers and Kubernetes orchestration.</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="service-card">
-<i class="fa-solid fa-server"></i>
-<h4>Infrastructure</h4>
-<p>Virtual machines, networking, storage and infrastructure management.</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="service-card">
-<i class="fa-solid fa-shield-halved"></i>
-<h4>Cyber Security</h4>
-<p>Secure infrastructure, access management and application protection.</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="service-card">
-<i class="fa-solid fa-laptop-code"></i>
-<h4>Web Development</h4>
-<p>Modern web applications and enterprise software solutions using Java and Spring Boot.</p>
-</div>
-</div>
-
-</div>
-</section>
-
-
-<!-- TECHNOLOGY -->
-
-<section class="section tech-section" id="technology">
-
-<div class="section-title">
-
-<h2>Technology Stack</h2>
-
-<p style="color:#cbd5e1">
-Technologies powering our development ecosystem.
-</p>
-
-</div>
-
-<div class="row g-4">
-
-<div class="col-6 col-md-3">
-<div class="tech-card">
-<i class="fa-brands fa-aws"></i>
-<h5>AWS</h5>
-<p>Cloud Infrastructure</p>
-</div>
-</div>
-
-<div class="col-6 col-md-3">
-<div class="tech-card">
-<i class="fa-brands fa-microsoft"></i>
-<h5>Microsoft Azure</h5>
-<p>Cloud Platform</p>
-</div>
-</div>
-
-<div class="col-6 col-md-3">
-<div class="tech-card">
-<i class="fa-brands fa-docker"></i>
-<h5>Docker</h5>
-<p>Containers</p>
-</div>
-</div>
-
-<div class="col-6 col-md-3">
-<div class="tech-card">
-<i class="fa-brands fa-java"></i>
-<h5>Java</h5>
-<p>Programming</p>
-</div>
-</div>
-
-<div class="col-6 col-md-3">
-<div class="tech-card">
-<i class="fa-brands fa-github"></i>
-<h5>GitHub</h5>
-<p>Version Control</p>
-</div>
-</div>
-
-<div class="col-6 col-md-3">
-<div class="tech-card">
-<i class="fa-solid fa-gears"></i>
-<h5>Jenkins</h5>
-<p>Automation</p>
-</div>
-</div>
-
-<div class="col-6 col-md-3">
-<div class="tech-card">
-<i class="fa-solid fa-dharmachakra"></i>
-<h5>Kubernetes</h5>
-<p>Orchestration</p>
-</div>
-</div>
-
-<div class="col-6 col-md-3">
-<div class="tech-card">
-<i class="fa-solid fa-database"></i>
-<h5>MySQL</h5>
-<p>Database</p>
-</div>
-</div>
-
-</div>
-</section>
-
-
-<!-- CI CD PIPELINE -->
-
-<section class="section" id="pipeline">
-
-<div class="section-title">
-
-<h2>Our CI/CD Pipeline</h2>
-
-<p>From source code to production deployment.</p>
-
-</div>
-
-<div class="pipeline">
-
-<div class="pipeline-step">
-<i class="fa-brands fa-git-alt"></i>
-<h6>Code</h6>
-<small>Git Repository</small>
-</div>
-
-<div class="pipeline-arrow">
-<i class="fa-solid fa-arrow-right"></i>
-</div>
-
-<div class="pipeline-step">
-<i class="fa-solid fa-hammer"></i>
-<h6>Build</h6>
-<small>Maven</small>
-</div>
-
-<div class="pipeline-arrow">
-<i class="fa-solid fa-arrow-right"></i>
-</div>
-
-<div class="pipeline-step">
-<i class="fa-solid fa-vial"></i>
-<h6>Test</h6>
-<small>Testing</small>
-</div>
-
-<div class="pipeline-arrow">
-<i class="fa-solid fa-arrow-right"></i>
-</div>
-
-<div class="pipeline-step">
-<i class="fa-brands fa-docker"></i>
-<h6>Package</h6>
-<small>Docker</small>
-</div>
-
-<div class="pipeline-arrow">
-<i class="fa-solid fa-arrow-right"></i>
-</div>
-
-<div class="pipeline-step">
-<i class="fa-solid fa-rocket"></i>
-<h6>Deploy</h6>
-<small>Cloud</small>
-</div>
-
-</div>
+    </div>
 
 </section>
-
-
-<!-- STATISTICS -->
-
-<section class="stats">
-
-<div class="row">
-
-<div class="col-md-3 col-6">
-<div class="stat-box">
-<i class="fa-solid fa-cloud fa-2x"></i>
-<h2>24/7</h2>
-<p>Cloud Availability Goal</p>
-</div>
-</div>
-
-<div class="col-md-3 col-6">
-<div class="stat-box">
-<i class="fa-solid fa-code fa-2x"></i>
-<h2>100%</h2>
-<p>Automation Focus</p>
-</div>
-</div>
-
-<div class="col-md-3 col-6">
-<div class="stat-box">
-<i class="fa-solid fa-shield fa-2x"></i>
-<h2>Secure</h2>
-<p>Security First</p>
-</div>
-</div>
-
-<div class="col-md-3 col-6">
-<div class="stat-box">
-<i class="fa-solid fa-globe fa-2x"></i>
-<h2>Global</h2>
-<p>Cloud Reach</p>
-</div>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- TEAM -->
-
-<section class="section" id="team">
-
-<div class="section-title">
-<h2>Meet Our Team</h2>
-<p>People behind technology and innovation.</p>
-</div>
-
-<div class="row g-4">
-
-<div class="col-md-4">
-<div class="team-card">
-<img src="https://i.pravatar.cc/150?img=12" alt="Team member">
-<h5>Development Team</h5>
-<p>Software Engineering</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="team-card">
-<img src="https://i.pravatar.cc/150?img=11" alt="Team member">
-<h5>DevOps Team</h5>
-<p>Cloud & Automation</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="team-card">
-<img src="https://i.pravatar.cc/150?img=13" alt="Team member">
-<h5>Infrastructure Team</h5>
-<p>Cloud Infrastructure</p>
-</div>
-</div>
-
-</div>
-</section>
-
-
-<!-- LATEST UPDATES -->
-
-<section class="section bg-light" id="updates">
-
-<div class="section-title">
-<h2>Latest Technology</h2>
-<p>Explore the world of modern technology.</p>
-</div>
-
-<div class="row g-4">
-
-<div class="col-md-4">
-<div class="news-card">
-<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800"
-alt="Cloud computing">
-<div class="news-content">
-<h5>Cloud Computing</h5>
-<p>Discover how cloud platforms are transforming businesses.</p>
-<a href="https://aws.amazon.com/what-is-cloud-computing/"
-target="_blank">Read More →</a>
-</div>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="news-card">
-<img src="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800"
-alt="DevOps">
-<div class="news-content">
-<h5>DevOps Revolution</h5>
-<p>Understand automation and continuous software delivery.</p>
-<a href="https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-devops"
-target="_blank">Read More →</a>
-</div>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="news-card">
-<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800"
-alt="Technology">
-<div class="news-content">
-<h5>Future of Technology</h5>
-<p>Explore the innovations shaping tomorrow's digital world.</p>
-<a href="https://azure.microsoft.com/"
-target="_blank">Read More →</a>
-</div>
-</div>
-</div>
-
-</div>
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="section contact-section" id="contact">
-
-<div class="section-title">
-<h2>Get In Touch</h2>
-<p style="color:#cbd5e1">
-Have a project in mind? Let's connect.
-</p>
-</div>
-
-<div class="row">
-
-<div class="col-lg-5 mb-4">
-
-<h4>Contact Information</h4>
-
-<p class="mt-4">
-<i class="fa-solid fa-envelope text-info"></i>
-&nbsp; info@loksaieta.com
-</p>
-
-<p>
-<i class="fa-solid fa-globe text-info"></i>
-&nbsp; www.loksaieta.com
-</p>
-
-<p>
-<i class="fa-solid fa-location-dot text-info"></i>
-&nbsp; India
-</p>
-
-</div>
-
-<div class="col-lg-7">
-
-<form class="contact-form" onsubmit="sendMessage(event)">
-
-<input type="text" placeholder="Your Name" required>
-
-<input type="email" placeholder="Your Email" required>
-
-<input type="text" placeholder="Subject" required>
-
-<textarea placeholder="Write your message..." required></textarea>
-
-<button type="submit" class="btn-main">
-Send Message <i class="fa-solid fa-paper-plane"></i>
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
 
 <footer>
-
-<h3 style="color:white;font-weight:800">
-LOKSAIETA TECHNOLOGIES
-</h3>
-
-<p class="mt-3">
-Innovating Today. Building Tomorrow.
-</p>
-
-<div class="mt-3">
-
-<a href="#home"><i class="fa-solid fa-house"></i> Home</a>
-
-<a href="#about"><i class="fa-solid fa-building"></i> About</a>
-
-<a href="#services"><i class="fa-solid fa-gears"></i> Services</a>
-
-<a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
-
-</div>
-
-<hr style="border-color:#475569">
-
-<p>
-© 2026 Loksaieta Technologies. All Rights Reserved.
-</p>
-
-<p>Designed with <i class="fa-solid fa-heart text-danger"></i> and Technology</p>
-
+    <h2 style="color:#00f5ff;font-family:Orbitron">NEON ARCADE</h2>
+    <p>Play Beyond Limits. Dream Without Boundaries.</p>
+    <br>
+    <p>© 2026 Neon Arcade | Created with ⚡</p>
 </footer>
-
-
-<!-- JAVASCRIPT -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
 
 <script>
 
-function toggleTheme() {
+// LIVE CLOCK
 
-    document.body.classList.toggle("dark");
+function updateClock() {
+    document.getElementById("clock").textContent =
+        "YOUR LOCAL TIME: " + new Date().toLocaleTimeString();
+}
+
+setInterval(updateClock,1000);
+updateClock();
+
+// SPEED CLICK GAME
+
+let score = 0;
+let timeLeft = 10;
+let running = false;
+let timer;
+
+function startGame() {
+
+    if(running) return;
+
+    score = 0;
+    timeLeft = 10;
+    running = true;
+
+    document.getElementById("score").textContent = score;
+    document.getElementById("time").textContent = timeLeft;
+    document.getElementById("message").textContent =
+        "GO GO GO! CLICK THE CIRCLE!";
+
+    document.getElementById("target").style.display = "inline-block";
+    document.getElementById("startBtn").disabled = true;
+
+    timer = setInterval(function() {
+
+        timeLeft--;
+
+        document.getElementById("time").textContent = timeLeft;
+
+        if(timeLeft <= 0) {
+
+            clearInterval(timer);
+            running = false;
+
+            document.getElementById("target").style.display = "none";
+            document.getElementById("startBtn").disabled = false;
+
+            document.getElementById("message").textContent =
+                "🏆 GAME OVER! Your final score is " + score + "!";
+
+        }
+
+    },1000);
 
 }
 
-function sendMessage(event) {
+function hitTarget() {
 
-    event.preventDefault();
+    if(!running) return;
 
-    alert("Thank you! Your message has been submitted.");
+    score++;
 
-    event.target.reset();
+    document.getElementById("score").textContent = score;
+
+    let colors = ["#00f5ff","#ff00c8","#a000ff","#00ff88","#ffff00"];
+
+    document.getElementById("target").style.background =
+        colors[Math.floor(Math.random()*colors.length)];
+
+    document.getElementById("target").style.marginLeft =
+        Math.floor(Math.random()*40) + "px";
+
+}
+
+// MATH CHALLENGE
+
+function mathGame() {
+
+    let a = Math.floor(Math.random()*20)+1;
+    let b = Math.floor(Math.random()*20)+1;
+
+    let answer = prompt("Solve this: " + a + " + " + b + " = ?");
+
+    if(answer === null) return;
+
+    if(answer.trim() !== "" && Number(answer) === a+b) {
+        alert("🎉 AMAZING! Correct answer!");
+    } else {
+        alert("❌ Not quite! The correct answer is " + (a+b));
+    }
+
+}
+
+// DICE GAME
+
+function rollDice() {
+
+    let dice = Math.floor(Math.random()*6)+1;
+
+    alert("🎲 You rolled: " + dice + "!\n" +
+    (dice === 6 ? "JACKPOT! You got the highest number!" : "Try again!"));
+
+}
+
+// SPACE EXPLORER
+
+function spaceGame() {
+
+    let planets = [
+        "🔴 Mars - The Red Planet",
+        "🪐 Saturn - The Ringed Planet",
+        "🔵 Neptune - The Ice Giant",
+        "🌍 Earth - Our Home",
+        "🟠 Jupiter - The Giant Planet"
+    ];
+
+    let planet = planets[Math.floor(Math.random()*planets.length)];
+
+    alert("🌌 SPACE DISCOVERY!\n\n" + planet);
 
 }
 
@@ -993,4 +482,3 @@ function sendMessage(event) {
 
 </body>
 </html>
-
